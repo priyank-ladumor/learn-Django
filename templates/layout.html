@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Default Val {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <nav>This is nav bar</nav>
+    {% block content %}{% endblock %}
+  </body>
+</html>
+
+{% comment %} 
+<!-- template injecting -->
+Jinja2 allows you to write dynamic HTML by mixing Python-like
+expressions into your HTML files. 
+
+ {% load static %}
+<!-- its means static files will be loaded and injected -->
+{% endcomment %}
