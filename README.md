@@ -32,3 +32,23 @@ pip install -r requirements.txt
 
  <!-- how to remove all the packages in a virtual env -->
 pip uninstall -r requirements.txt -y
+
+<!-- tailwin install -->
+pip install django-tailwind
+<!-- for browser reload  -->
+pip install django-browser-reload
+
+<!-- init tailwind command code -->
+python manage.py tailwind init
+
+<!-- tailwind install on manage.py  -->
+python manage.py tailwind install
+
+<!-- start tailwind   -->
+python manage.py tailwind start
+
+<!-- database migrations in Django command  -->
+python manage.py migrate
+
+<!-- create super user -->
+python manage.py createsuperuser
