@@ -1,3 +1,12 @@
+<!-- virtual env create  -->
+python -m venv .venv
+
+<!-- virtual env activate (Git-Bash) -->
+source .venv/Scripts/activate  
+
+<!-- virtual env deactivate (Git-Bash) -->
+deactivate
+
 <!-- install Django  -->
 pip install django
 
