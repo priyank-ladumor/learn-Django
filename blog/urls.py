@@ -7,4 +7,5 @@ from . import views
 urlpatterns = [
     path('', views.learn_app, name='learn_app'),
     path('learn/', views.learn__app, name='learn__app'),
+    path('list/', views.blog, name='blog'),
 ]

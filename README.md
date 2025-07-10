@@ -47,8 +47,14 @@ python manage.py tailwind install
 <!-- start tailwind   -->
 python manage.py tailwind start
 
-<!-- database migrations in Django command  -->
-python manage.py migrate
-
 <!-- create super user -->
 python manage.py createsuperuser
+
+<!-- reset super-user password -->
+python manage.py changepassword your_superuser_username
+
+<!-- make-migrations  -->
+python manage.py makemigrations
+
+<!-- database migrations in Django command  -->
+python manage.py migrate
