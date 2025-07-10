@@ -14,6 +14,7 @@ ENV/
 # Django/migrations
 **/migrations/
 *.sqlite3
+# db.sqlite3 
 
 # VS Code & IDEs
 .vscode/
