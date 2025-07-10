@@ -3,11 +3,19 @@
 {% block title %}Django Learn Page{% endblock %} 
 
 {% block content %}
-<h1>learn content</h1>
+<h1 class="bg-blue-200">learn content</h1>
+    {% for blog in blogs %}
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <p class="text-gray-700 text-xl font-bold">{{blog.title}}</p>
+            <img src="{{ blog.image.url }}" alt="blog_img_url" >
+            <span>{{ blog.id }}</span>
+            <a 
+                type="button" 
+                {% comment %} href="/blog/{{blog.id}}"  {% endcomment %}
+                href="{% url 'blog_detail' blog.id %}"
+                class="bg-black text-white p-1 px-2 rounded-sm cursor-pointer" >
+                View
+            </a>
+        </div>
+    {% endfor %}
 {% endblock %}
-
-{% for blog in blogs %}
-    <div>
-        <p>{{blog.title}}</p>
-    </div>
-{% endfor %}

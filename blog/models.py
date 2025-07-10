@@ -11,10 +11,11 @@ class Blog(models.Model):
     ]
     title = models.CharField(max_length=200)
     pub_date = models.DateTimeField()
-    body = models.TextField()
     image = models.ImageField(upload_to='images/')
     date = models.DateTimeField(default=timezone.now)
+    draft = models.BooleanField(default=False)
     blog_type = models.CharField(max_length=7, choices=BLOG_TYPE, default='Public')
+    description = models.TextField(default='', blank=True)
     
     def __str__(self):
         return self.title

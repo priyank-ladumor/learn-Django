@@ -54,6 +54,9 @@ python manage.py createsuperuser
 python manage.py changepassword your_superuser_username
 
 <!-- make-migrations  -->
+python manage.py makemigrations app_name
+
+<!-- make-migrations (changes to a model and aren’t sure which app to use) -->
 python manage.py makemigrations
 
 <!-- database migrations in Django command  -->

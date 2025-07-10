@@ -1,0 +1,21 @@
+{% extends "layout.html" %} 
+
+{% block title %}Django blog detail Page{% endblock %} 
+
+{% block content %}
+<h1 class="text-2xl font-bold text-blue-600 mb-6">blog detail Content</h1>
+    <div class="bg-white shadow-md rounded p-6 mb-6">
+        <p class="text-gray-800 text-xl font-semibold mb-2">{{ blog.title }}</p>
+        
+        <img src="{{ blog.image.url }}" alt="Blog Image" class="w-full max-h-64 object-cover mb-4 rounded">
+
+        <span class="text-sm text-gray-500">Blog ID: {{ blog.id }}</span>
+
+        <a 
+            href="{% url 'blog' %}"
+            class="inline-block mt-4 bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition"
+        >
+            Back
+        </a>
+    </div>
+{% endblock %}
