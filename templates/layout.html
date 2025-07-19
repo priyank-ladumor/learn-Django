@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
   <body>
-    <nav>This is nav bar</nav>
+    <nav class="m-3">{% block navbar %}This is nav bar{% endblock %}</nav>
     {% block content %}{% endblock %}
   </body>
 </html>

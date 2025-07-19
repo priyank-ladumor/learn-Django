@@ -5,9 +5,6 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-def learn_app(request):
-    return render(request, 'blog/learn.html')
-
 def learn__app(request):
     return render(request, 'blog/demo/index.html')
 
@@ -34,4 +31,25 @@ def create_blog(request):
         form = BlogForm()
     return render(request, 'blog/create_blog.html', {'form': form})
 
+
+def update_blog(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    if request.method == 'POST':
+        form = BlogForm(request.POST, instance=blog)
+        if form.is_valid():
+            form.save()
+            return redirect('blog')
+            # return redirect('blog_detail', blog_id=blog.id)
+    else:
+        form = BlogForm(instance=blog)
+    return render(request, 'blog/update_blog.html', {'form': form})
+
+
+# @login_required
+def delete_blog(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    if request.method == 'POST':
+        blog.delete()
+        return redirect('blog')
+    return render(request, 'blog/confirm_delete.html', {'blog': blog})
 
