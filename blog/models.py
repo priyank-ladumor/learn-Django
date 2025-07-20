@@ -37,6 +37,7 @@ class Blog(models.Model):
     draft = models.BooleanField(default=False)         # Flag to mark blog as draft
     blog_type = models.CharField(max_length=7, choices=BLOG_TYPE, default='Public')  # Type of blog
     description = models.TextField(default='', blank=True)  # Optional description/content
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     # Many-to-Many relation with Tag model 
     tags = models.ManyToManyField(Tag, related_name='blogs', blank=True)

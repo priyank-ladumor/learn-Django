@@ -13,6 +13,7 @@ class BlogForm(forms.ModelForm): # used to create a form
             'description',
             'tags',
         ]
+        exclude = ['author'] # Prevent users from editing/deleting other users' blogs (on the backend), but allow them to edit their own
         widgets = { # used to configure the form fields
             'pub_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
             'tags': forms.CheckboxSelectMultiple(),

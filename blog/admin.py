@@ -17,7 +17,7 @@ class BlogCommentInline(admin.TabularInline): # TabularInline is the default inl
 # Custom Blog admin
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('title', 'pub_date', 'blog_type', 'draft')  # Columns shown in list view
+    list_display = ('title', 'author', 'pub_date', 'blog_type', 'draft')  # Columns shown in list view
     list_filter = ('blog_type', 'draft', 'tags')                # Sidebar filters
     search_fields = ('title', 'description')                    # Search bar
     filter_horizontal = ('tags',)                               # UI for many-to-many field tags on Blog admin form

@@ -1,9 +1,9 @@
 {% extends "layout.html" %} 
-{% block navbar %}
+{% comment %} {% block navbar %}
 <div class="float-end">
     <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="{% url 'create_blog' %}" >Create Blog</a>
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}
 {% block title %}Django Learn Page{% endblock %} 
 
 {% block content %}
@@ -20,8 +20,10 @@
                 class="bg-black text-white p-1 px-2 rounded-sm cursor-pointer" >
                 View
             </a>
+            {% if request.user == blog.author %}
             <a href="{% url 'update_blog' blog.id %}" class="bg-blue-600 p-1 text-white text-xl font-bold">Edit</a>
             <a href="{% url 'delete_blog' blog.id %}" class="bg-red-600 p-1 text-white text-xl font-bold" >Delete</a>
+            {% endif %}
         </div>
     {% endfor %}
 {% endblock %}
